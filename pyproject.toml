@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=66.0", "wheel"]
+requires = ["setuptools>=75.0", "wheel"]
 build-backend = "setuptools.build_meta:__legacy__"
 
 [project]
@@ -49,17 +49,17 @@ mandelcli = "pymandel.mandelcli:main"
 make_colormap = "colormaps.make_colormap:main"
 
 [project.urls]
-homepage = "https://github.com/semuconsulting/pymandel"
-documentation = "https://www.semuconsulting.com/pymandel/"
-repository = "https://github.com/semuconsulting/pymandel"
-changelog = "https://github.com/semuconsulting/pymandel/blob/master/RELEASE_NOTES.md"
+homepage = "https://github.com/semuadmin/pymandel"
+documentation = "https://www.semuadmin.com/pymandel/"
+repository = "https://github.com/semuadmin/pymandel"
+changelog = "https://github.com/semuadmin/pymandel/blob/master/RELEASE_NOTES.md"
 
 [project.optional-dependencies]
 deploy = [
     "build",
     "packaging>=24.2",
     "pip",
-    "setuptools>=66.0.0",
+    "setuptools>=75.0.0",
     "twine>=6.1.0",
     "wheel",
 ]

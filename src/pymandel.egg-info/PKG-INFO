@@ -1,4 +1,4 @@
-Metadata-Version: 2.2
+Metadata-Version: 2.4
 Name: pymandel
 Version: 1.0.14
 Summary: Fractal generation GUI application
@@ -679,10 +679,10 @@ License:                     GNU GENERAL PUBLIC LICENSE
         Public License instead of this License.  But first, please read
         <https://www.gnu.org/licenses/why-not-lgpl.html>.
         
-Project-URL: homepage, https://github.com/semuconsulting/pymandel
-Project-URL: documentation, https://www.semuconsulting.com/pymandel/
-Project-URL: repository, https://github.com/semuconsulting/pymandel
-Project-URL: changelog, https://github.com/semuconsulting/pymandel/blob/master/RELEASE_NOTES.md
+Project-URL: homepage, https://github.com/semuadmin/pymandel
+Project-URL: documentation, https://www.semuadmin.com/pymandel/
+Project-URL: repository, https://github.com/semuadmin/pymandel
+Project-URL: changelog, https://github.com/semuadmin/pymandel/blob/master/RELEASE_NOTES.md
 Keywords: PyMandel,fractal,Mandelbrot,Julia,Burning Ship,Tricorn,numba
 Classifier: Operating System :: OS Independent
 Classifier: Development Status :: 5 - Production/Stable
@@ -712,7 +712,7 @@ Provides-Extra: deploy
 Requires-Dist: build; extra == "deploy"
 Requires-Dist: packaging>=24.2; extra == "deploy"
 Requires-Dist: pip; extra == "deploy"
-Requires-Dist: setuptools>=66.0.0; extra == "deploy"
+Requires-Dist: setuptools>=75.0.0; extra == "deploy"
 Requires-Dist: twine>=6.1.0; extra == "deploy"
 Requires-Dist: wheel; extra == "deploy"
 Provides-Extra: test
@@ -725,6 +725,7 @@ Requires-Dist: pytest; extra == "test"
 Requires-Dist: pytest-cov; extra == "test"
 Requires-Dist: Sphinx; extra == "test"
 Requires-Dist: sphinx-rtd-theme; extra == "test"
+Dynamic: license-file
 
 # PyMandel
 

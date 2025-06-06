@@ -6,7 +6,7 @@ Pillow>=9.3.0
 build
 packaging>=24.2
 pip
-setuptools>=66.0.0
+setuptools>=75.0.0
 twine>=6.1.0
 wheel
 
