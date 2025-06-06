@@ -8,31 +8,31 @@
 
 PyMandel is a free, open-source graphical Mandelbrot and Julia Set rendering application written entirely in Python 3 and tkinter 8.6, with metadata import/export, basic animation functionality and performance enhancement via [Numba](http://numba.pydata.org/) JIT compilation, parallelisation and caching.
 
-![MacOS screenshot](https://github.com/semuconsulting/PyMandel/blob/main/images/burning_julia.png?raw=true)
+![MacOS screenshot](https://github.com/semuadmin/PyMandel/blob/main/images/burning_julia.png?raw=true)
 
 The application plots fractals in an expandable window and allows the user to save the image as a .png file. It automatically saves the metadata (settings) associated with an image and provides a facility to import that metadata at a later date to reproduce it. It supports popular variants such as 'Burning Ship' and 'Tricorn'.
 
-![image0](https://github.com/semuconsulting/PyMandel/blob/main/images/image0.png?raw=true)
-![image1](https://github.com/semuconsulting/PyMandel/blob/main/images/image1.png?raw=true)
-![image2](https://github.com/semuconsulting/PyMandel/blob/main/images/image2.png?raw=true)
+![image0](https://github.com/semuadmin/PyMandel/blob/main/images/image0.png?raw=true)
+![image1](https://github.com/semuadmin/PyMandel/blob/main/images/image1.png?raw=true)
+![image2](https://github.com/semuadmin/PyMandel/blob/main/images/image2.png?raw=true)
 
-![image3](https://github.com/semuconsulting/PyMandel/blob/main/images/image3.png?raw=true)
-![image5](https://github.com/semuconsulting/PyMandel/blob/main/images/image5.png?raw=true)
-![image6](https://github.com/semuconsulting/PyMandel/blob/main/images/image6.png?raw=true)
+![image3](https://github.com/semuadmin/PyMandel/blob/main/images/image3.png?raw=true)
+![image5](https://github.com/semuadmin/PyMandel/blob/main/images/image5.png?raw=true)
+![image6](https://github.com/semuadmin/PyMandel/blob/main/images/image6.png?raw=true)
 
 It also includes both GUI and command line facilities to automatically create sequences of 'deep zoom' or 'spinning Julia Set' images which can be converted into animated GIF files or short videos using external open source tools (e.g. GIMP or OpenShot).
 
 ## <a name="currentstatus">Current Status</a>
 
 ![Status](https://img.shields.io/pypi/status/PyMandel)
-![Release](https://img.shields.io/github/v/release/semuconsulting/PyMandel)
-![Build](https://img.shields.io/github/actions/workflow/status/semuconsulting/PyMandel/main.yml?branch=master)
-![Release Date](https://img.shields.io/github/release-date-pre/semuconsulting/PyMandel)
-![Last Commit](https://img.shields.io/github/last-commit/semuconsulting/PyMandel)
-![Contributors](https://img.shields.io/github/contributors/semuconsulting/PyMandel.svg)
-![Open Issues](https://img.shields.io/github/issues-raw/semuconsulting/PyMandel)
+![Release](https://img.shields.io/github/v/release/semuadmin/PyMandel)
+![Build](https://img.shields.io/github/actions/workflow/status/semuadmin/PyMandel/main.yml?branch=master)
+![Release Date](https://img.shields.io/github/release-date-pre/semuadmin/PyMandel)
+![Last Commit](https://img.shields.io/github/last-commit/semuadmin/PyMandel)
+![Contributors](https://img.shields.io/github/contributors/semuadmin/PyMandel.svg)
+![Open Issues](https://img.shields.io/github/issues-raw/semuadmin/PyMandel)
 
-PyMandel is intended as free, open-source educational fun. We're not looking to compete with the likes of Ultra Fractal © here, but contributions are very welcome - please refer to [CONTRIBUTING.MD](https://github.com/semuconsulting/PyMandel/blob/main/CONTRIBUTING.md).
+PyMandel is intended as free, open-source educational fun. We're not looking to compete with the likes of Ultra Fractal © here, but contributions are very welcome - please refer to [CONTRIBUTING.MD](https://github.com/semuadmin/PyMandel/blob/main/CONTRIBUTING.md).
 
 ### Animated Mandelbrot Zoom sequence
 
@@ -42,14 +42,14 @@ This 178 frame, 10 fps sequence was automatically generated using the `mandelcli
 mandelcli --filename zoom --width 400 --height 300 --frames 178 --zoom 0.75 --zoominc 1.2 --zxoffset -0.743643887037158704752191506114774 --zyoffset 0.131825904205311970493132056385139 --theme Colorcet_CET_C1
 ```
 
-![Zoom Animation](https://github.com/semuconsulting/PyMandel/blob/main/images/zoom.gif?raw=true)
+![Zoom Animation](https://github.com/semuadmin/PyMandel/blob/main/images/zoom.gif?raw=true)
 
 ### Animated Julia Spin sequences
 
 These 400 frame, 20 fps sequences were automatically generated using the GUI's SPIN function and converted into animated GIF files using GIMP. The second sequence illustrates a Julia Set with exponent = 3.
 
 
-![Spin Animation](https://github.com/semuconsulting/PyMandel/blob/main/images/juliaspin.gif?raw=true) ![Spin Animation Exponent = 3](https://github.com/semuconsulting/PyMandel/blob/main/images/juliaspin_exp3.gif?raw=true)
+![Spin Animation](https://github.com/semuadmin/PyMandel/blob/main/images/juliaspin.gif?raw=true) ![Spin Animation Exponent = 3](https://github.com/semuadmin/PyMandel/blob/main/images/juliaspin_exp3.gif?raw=true)
 
 ### Sample Metadata
 
@@ -186,7 +186,7 @@ The application makes use of [Numba](http://numba.pydata.org/) just in time (jit
 
 * Save button - save the currently displayed image as a PNG file. You will be prompted for a directory on first use. A corresponding metadata json file will also be saved containing the parameters that were used to create the image, allowing it to be reproduced at a later date.
 
-* File..Import Settings - import previously saved metadata. You will be prompted to select a json file to import. Some sample *.json files can be found in the [Images](https://github.com/semuconsulting/PyMandel/blob/main/images) folder
+* File..Import Settings - import previously saved metadata. You will be prompted to select a json file to import. Some sample *.json files can be found in the [Images](https://github.com/semuadmin/PyMandel/blob/main/images) folder
 
 * Zoom button - automatically create and save a sequence of images at increasing zoom levels, which can be converted externally into an animation (e.g. GIF or short video).
 
@@ -267,13 +267,13 @@ Pass `-h` or `-help` for a list of available parameters.
 
 ## <a name="author">Author and License</a>
 
-![License](https://img.shields.io/github/license/semuconsulting/PyMandel.svg)
+![License](https://img.shields.io/github/license/semuadmin/PyMandel.svg)
 
 GPLv3 License
 
 Copyright (c) 2020, SEMU Consulting
 All rights reserved.
-semuadmin@semuconsulting.com
+semuadmin@semuadmin.com
 
 The HoloViz [Colorcet color maps](https://github.com/holoviz/colorcet) library has been harvested for some of the color rendering themes. These color maps are released under a Creative Commons Attribution 4.0 International Public License (CC-BY) - see [Colorcet License Conditions](https://github.com/holoviz/colorcet/blob/main/LICENSE.txt) for details. ***NB:*** for convenience the selected Colorcet assets (256-depth cyclic color maps) were converted into numpy rgb arrays in colormaps.py and the library itself is not actually used at runtime.
 
