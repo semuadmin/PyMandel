@@ -26,7 +26,7 @@ It also includes both GUI and command line facilities to automatically create se
 
 ![Status](https://img.shields.io/pypi/status/PyMandel)
 ![Release](https://img.shields.io/github/v/release/semuadmin/PyMandel)
-![Build](https://img.shields.io/github/actions/workflow/status/semuadmin/PyMandel/main.yml?branch=master)
+![Build](https://img.shields.io/github/actions/workflow/status/semuadmin/PyMandel/main.yml?branch=main)
 ![Release Date](https://img.shields.io/github/release-date-pre/semuadmin/PyMandel)
 ![Last Commit](https://img.shields.io/github/last-commit/semuadmin/PyMandel)
 ![Contributors](https://img.shields.io/github/contributors/semuadmin/PyMandel.svg)
