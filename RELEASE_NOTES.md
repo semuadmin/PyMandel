@@ -1,5 +1,11 @@
 # PyMandel Release Notes
 
+### RELEASE 1.0.15
+
+CHANGES:
+
+1. Remove pinned numpy dependency.
+
 ### RELEASE 1.0.14
 
 CHANGES:

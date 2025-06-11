@@ -41,7 +41,7 @@ classifiers = [
     "Topic :: Utilities",
 ]
 
-dependencies = ["numba>=0.60.0", "numpy>=2.0.0,<2.2.0", "Pillow>=9.3.0"]
+dependencies = ["numba>=0.60.0", "numpy>=2.0.0", "Pillow>=9.3.0"]
 
 [project.scripts]
 pymandel = "pymandel.__main__:main"
