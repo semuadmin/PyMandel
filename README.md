@@ -101,7 +101,7 @@ sudo apt install tk-devel
 
 ![Python version](https://img.shields.io/pypi/pyversions/PyMandel.svg?style=flat)
 [![PyPI version](https://img.shields.io/pypi/v/PyMandel.svg?style=flat)](https://pypi.org/project/PyMandel/)
-[![PyPI downloads](https://github.com/semuadmin/pymandel/blob/master/images/clickpy_top25.svg?raw=true)](https://clickpy.clickhouse.com/dashboard/pymandel)
+[![PyPI downloads](https://github.com/semuadmin/PyMandel/blob/main/images/clickpy_top25.svg?raw=true)](https://clickpy.clickhouse.com/dashboard/pymandel)
 
 The easiest way to install the latest version of PyMandel is via [pip](http://pypi.python.org/pypi/pip/):
 
