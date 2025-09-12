@@ -1,5 +1,12 @@
 # PyMandel Release Notes
 
+### RELEASE 1.0.17
+
+CHANGES:
+
+1. Update deprecated github actions.
+1. Update vscode workflows.
+
 ### RELEASE 1.0.16
 
 FIXES:

@@ -1,21 +1,79 @@
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
-    // Use the Install Build/Test Dependencies tasks to install the necessary toolchain.
+    // PyMandel VSCode workflow.
+    //
+    // These build, install and test tasks are targeted at a venv
+    // called 'pymandel' located in the user's home directory.
+    // Set your workspace default VSCode Python interpreter to
+    // this venv, i.e.
+    // "${userHome}/pymandel/bin/python3" on Linux/MacOS
+    // "C:/Users/user/pymandel/Scripts/python.exe" on Windows
+    //
+    // The "Test" task will initialise the venv and execute all
+    // necessary build and installation precursors.
+    //
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Install Dependencies",
-            "type": "process",
+            "label": "Delete Venv",
+            "type": "shell",
+            "command": "rm",
+            "args": [
+                "-rf",
+                "${config:venv}",
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Create Venv",
+            "type": "shell",
+            "command": "${config:python.systemPath}",
+            "args": [
+                "-m",
+                "venv",
+                "${config:venv}",
+            ],
+            "problemMatcher": [],
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Delete Venv",
+            ],
+        },
+        {
+            "label": "Activate Venv",
+            "type": "shell",
+            "command": "source",
+            "args": [
+                "~/pymandel/bin/activate",
+            ],
+            "problemMatcher": [],
+        },
+        {
+            "label": "Install Deploy Dependencies",
+            "type": "shell",
             "command": "${config:python.defaultInterpreterPath}",
             "args": [
                 "-m",
                 "pip",
                 "install",
                 "--upgrade",
-                "."
+                "--group",
+                "deploy"
             ],
-            "problemMatcher": []
+            "problemMatcher": [],
+        },
+        {
+            "label": "Install Optional Dependencies",
+            "type": "shell",
+            "command": "${config:python.defaultInterpreterPath}",
+            "args": [
+                "-m",
+                "pip",
+                "install",
+                "--upgrade",
+                "--group",
+                "optional"
+            ],
+            "problemMatcher": [],
         },
         {
             "label": "Clean",
@@ -30,13 +88,14 @@
                 "${config:modulename}.egg-info",
             ],
             "windows": {
-                "command": "rm",
+                "command": "Remove-Item",
                 "args": [
-                    "-R",
-                    "-Path",
-                    "'src/${config:modulename}.egg-info','build','dist','htmlcov','docs/_build'",
+                    "-Recurse",
+                    "-Force",
                     "-ErrorAction",
-                    "SilentlyContinue" // doesn't work! - stops on exit code 1 anyway
+                    "SilentlyContinue", // doesn't work! - stops on exit code 1 anyway
+                    "-Path",
+                    "'build','dist','htmlcov','docs/_build','src/${config:modulename}.egg-info'",
                 ]
             },
             "options": {
@@ -46,7 +105,7 @@
         },
         {
             "label": "Sort Imports",
-            "type": "process",
+            "type": "shell",
             "command": "${config:python.defaultInterpreterPath}",
             "args": [
                 "-m",
@@ -59,7 +118,7 @@
         },
         {
             "label": "Format",
-            "type": "process",
+            "type": "shell",
             "command": "${config:python.defaultInterpreterPath}",
             "args": [
                 "-m",
@@ -82,20 +141,18 @@
         {
             "label": "Security",
             "type": "process",
-            "command": "${config:python.defaultInterpreterPath}",
+            "command": "bandit",
             "args": [
-                "-m",
-                "bandit",
                 "-c",
                 "pyproject.toml",
                 "-r",
-                "."
+                "src/pymandel"
             ],
             "problemMatcher": []
         },
         {
             "label": "Build",
-            "type": "process",
+            "type": "shell",
             "command": "${config:python.defaultInterpreterPath}",
             "args": [
                 "-m",
@@ -107,12 +164,12 @@
             "problemMatcher": [],
             "dependsOrder": "sequence",
             "dependsOn": [
+                //"Create Venv",
+                "Install Deploy Dependencies",
+                "Install Optional Dependencies",
                 "Clean",
-                "Security",
                 "Sort Imports",
                 "Format",
-                "Pylint",
-                "Test",
             ],
             "group": {
                 "kind": "build",
@@ -120,18 +177,55 @@
             }
         },
         {
-            "label": "Test",
-            "type": "process",
+            "label": "Install", // into Virtual Environment
+            "type": "shell",
             "command": "${config:python.defaultInterpreterPath}",
             "args": [
                 "-m",
-                "pytest",
+                "pip",
+                "install",
+                "--force-reinstall",
+                // wildcard only works on Posix platforms
+                "${workspaceFolder}/dist/pymandel-*-py3-none-any.whl",
             ],
-            "problemMatcher": []
+            "windows": {
+                "command": "${config:python.defaultInterpreterPath}",
+                "args": [
+                    "-m",
+                    "pip",
+                    "install",
+                    "--force-reinstall",
+                    "${workspaceFolder}/dist/pymandel-1.0.17-py3-none-any.whl",
+                ]
+            },
+            "problemMatcher": [],
+        },
+        {
+            "label": "Test",
+            "type": "shell",
+            "command": "${config:python.defaultInterpreterPath}",
+            "args": [
+                "-m",
+                "pytest"
+            ],
+            "problemMatcher": [],
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "Activate Venv",
+                "Build",
+                "Install", // have to install before running pylint
+                "Pylint",
+                "Security",
+                "Sphinx HTML",
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
         },
         {
             "label": "Sphinx",
-            "type": "process",
+            "type": "shell",
             "command": "sphinx-apidoc",
             "args": [
                 "--ext-autodoc",
@@ -146,7 +240,7 @@
         },
         {
             "label": "Sphinx HTML",
-            "type": "process",
+            "type": "shell",
             "command": "/usr/bin/make",
             "windows": {
                 "command": "${workspaceFolder}/docs/make.bat"
@@ -164,8 +258,8 @@
             "problemMatcher": []
         },
         {
-            "label": "Sphinx Deploy to S3", // needs AWS credentials
-            "type": "process",
+            "label": "Sphinx Deploy", // needs AWS S3 credentials
+            "type": "shell",
             "command": "aws",
             "args": [
                 "s3",
@@ -181,28 +275,18 @@
             "problemMatcher": []
         },
         {
-            "label": "Install Locally",
-            "type": "process",
-            "command": "${config:python.defaultInterpreterPath}",
+            "label": "Run from Source",
+            "type": "shell",
+            "command": "python3",
             "args": [
                 "-m",
-                "pip",
-                "install",
-                "--upgrade",
-                "--force-reinstall",
-                "--find-links=${workspaceFolder}/dist",
-                "${workspaceFolderBasename}",
-                // "--target",
-                // "${config:venv}/Lib/site-packages"
+                "pygpsclient",
+                //"--verbosity",
+                //"3"
             ],
             "options": {
-                "cwd": "dist"
+                "cwd": "${workspaceFolder}/src"
             },
-            "dependsOrder": "sequence",
-            "dependsOn": [
-                "Build",
-                "Sphinx HTML"
-            ],
             "problemMatcher": []
         },
     ]

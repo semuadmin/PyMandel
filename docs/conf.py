@@ -13,21 +13,13 @@
 import os
 import sys
 
-# sys.path.clear()
-# paths = [
-#     "/Library/Frameworks/Python.framework/Versions/3.10/bin",
-#     "/Library/Frameworks/Python.framework/Versions/3.10/lib/python310.zip",
-#     "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10",
-#     "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/lib-dynload",
-#     "/Users/steve/Library/Python/3.10/lib/python/site-packages",
-#     "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages",
-#     "../src",
-# ]
-# for p in paths:
-#     sys.path.insert(0, os.path.abspath(p))
-
-sys.path.insert(0, os.path.abspath("../src"))
-print(sys.path)
+# get path to site-packages (source) folder within venv
+pypath = (
+    f"{os.path.expanduser("~")}/pymandel/lib/python"
+    f"{sys.version_info.major}.{sys.version_info.minor}/site-packages"
+)
+print(f"\n\033[1mUsing absolute path:\033[0m \033[95m{pypath}\033[0m\n")
+sys.path.insert(0, os.path.abspath(pypath))
 
 from pymandel import version as VERSION
 
@@ -69,9 +61,6 @@ html_title = "<project> v<version> documentation."
 # so a file named "default.css" will overwrite the builtin "default.css".
 # html_static_path = ["_static"]
 html_last_updated_fmt = "%b %d %Y"
-html_theme_options = {
-    "display_version": True,
-}
 
 autodoc_default_options = {
     "members": True,

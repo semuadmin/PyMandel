@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: pymandel
-Version: 1.0.16
+Version: 1.0.17
 Summary: Fractal generation GUI application
 Author-email: Steve Smith <semuadmin@semuconsulting.com>
 Maintainer-email: Steve Smith <semuadmin@semuconsulting.com>
@@ -16,40 +16,24 @@ Classifier: Environment :: MacOS X
 Classifier: Environment :: Win32 (MS Windows)
 Classifier: Environment :: X11 Applications
 Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
 Classifier: Intended Audience :: End Users/Desktop
 Classifier: Programming Language :: Python :: 3
-Classifier: Programming Language :: Python :: 3.9
 Classifier: Programming Language :: Python :: 3.10
 Classifier: Programming Language :: Python :: 3.11
 Classifier: Programming Language :: Python :: 3.12
 Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
 Classifier: Topic :: Multimedia :: Graphics
 Classifier: Topic :: Scientific/Engineering :: Mathematics
 Classifier: Topic :: Education
-Classifier: Topic :: Utilities
-Requires-Python: >=3.9
+Requires-Python: >=3.10
 Description-Content-Type: text/markdown
 License-File: LICENSE
 Requires-Dist: numba>=0.60.0
 Requires-Dist: numpy>=2.0.0
 Requires-Dist: Pillow>=9.3.0
-Provides-Extra: deploy
-Requires-Dist: build; extra == "deploy"
-Requires-Dist: packaging>=24.2; extra == "deploy"
-Requires-Dist: pip; extra == "deploy"
-Requires-Dist: setuptools>=75.0.0; extra == "deploy"
-Requires-Dist: twine>=6.1.0; extra == "deploy"
-Requires-Dist: wheel; extra == "deploy"
-Provides-Extra: test
-Requires-Dist: bandit; extra == "test"
-Requires-Dist: black; extra == "test"
-Requires-Dist: certifi; extra == "test"
-Requires-Dist: isort; extra == "test"
-Requires-Dist: pylint; extra == "test"
-Requires-Dist: pytest; extra == "test"
-Requires-Dist: pytest-cov; extra == "test"
-Requires-Dist: Sphinx; extra == "test"
-Requires-Dist: sphinx-rtd-theme; extra == "test"
 Dynamic: license-file
 
 # PyMandel
@@ -137,7 +121,7 @@ the Python 3 scripts (bin) and site_packages directories are included in your PA
 
 ### Dependencies
 
-PyMandel is compatible with Python 3.9 - 3.13.
+PyMandel is compatible with Python >= 3.10.
 
 On Windows and MacOS, pip, tkinter and the necessary imaging libraries are generally packaged with Python.  On some Linux distributions like Ubuntu 18+ and Raspberry Pi OS, they may need to be installed separately, e.g.:
 
@@ -155,7 +139,7 @@ sudo apt install tk-devel
 
 ![Python version](https://img.shields.io/pypi/pyversions/PyMandel.svg?style=flat)
 [![PyPI version](https://img.shields.io/pypi/v/PyMandel.svg?style=flat)](https://pypi.org/project/PyMandel/)
-![PyPI downloads](https://img.shields.io/pypi/dm/PyMandel.svg?style=flat)
+[![PyPI downloads](https://github.com/semuadmin/PyMandel/blob/main/images/clickpy_top25.svg?raw=true)](https://clickpy.clickhouse.com/dashboard/pymandel)
 
 The easiest way to install the latest version of PyMandel is via [pip](http://pypi.python.org/pypi/pip/):
 
@@ -188,12 +172,6 @@ python3 -m pymandel
 
 **NB:** if the Python 3 scripts (bin) or site_packages directories are *not* in your PATH, you will need
 to add the fully-qualified path to `pymandel` in the commands above.
-
-**Tip**: to find the site_packages location, type `pip3 show pymandel` and look for the `Location:` entry in the response, e.g.
-
-- Linux: `Location: /home/username/.local/lib/python3.12/site-packages`
-- MacOS: `Location: /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages`
-- Windows: `Location: c:\users\username\appdata\roaming\python\python312\lib\site-packages`
 
 **Tip:** To create an application launcher for linux distributions like Ubuntu, create a text file named `pymandel.desktop` with the following content (*edited for your particular environment*) and copy this to the `/home/user/.local/share/applications` folder, e.g.
 
