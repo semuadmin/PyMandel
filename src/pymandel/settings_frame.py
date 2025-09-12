@@ -418,19 +418,19 @@ class SettingsFrame(Frame):
         """
 
         self._validsettings = True
-        self._settype.trace("w", self.val_settings)
-        self._setvar.trace("w", self.val_settings)
-        self._zoom.trace("w", self.val_settings)
-        self._zx_off.trace("w", self.val_settings)
-        self._zy_off.trace("w", self.val_settings)
-        self._cx_off.trace("w", self.val_settings)
-        self._cy_off.trace("w", self.val_settings)
-        self._maxiter.trace("w", self.val_settings)
-        self._radius.trace("w", self.val_settings)
-        self._exponent.trace("w", self.val_settings)
-        self._filename.trace("w", self.val_settings)
-        self._frames.trace("w", self.val_settings)
-        self._zoominc.trace("w", self.val_settings)
+        self._settype.trace_add("write", self.val_settings)
+        self._setvar.trace_add("write", self.val_settings)
+        self._zoom.trace_add("write", self.val_settings)
+        self._zx_off.trace_add("write", self.val_settings)
+        self._zy_off.trace_add("write", self.val_settings)
+        self._cx_off.trace_add("write", self.val_settings)
+        self._cy_off.trace_add("write", self.val_settings)
+        self._maxiter.trace_add("write", self.val_settings)
+        self._radius.trace_add("write", self.val_settings)
+        self._exponent.trace_add("write", self.val_settings)
+        self._filename.trace_add("write", self.val_settings)
+        self._frames.trace_add("write", self.val_settings)
+        self._zoominc.trace_add("write", self.val_settings)
 
     def val_settings(self, *args, **kwargs):
         """

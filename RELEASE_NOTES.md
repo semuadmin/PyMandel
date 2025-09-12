@@ -1,5 +1,12 @@
 # PyMandel Release Notes
 
+### RELEASE 1.0.16
+
+FIXES:
+
+1. Remove deprecated tkinter trace calls in settings_frame.py. Now supports tkinter 9.0.2 under Python 3.12 and 3.13.
+1. Remove deprecated entries in pyproject.toml.
+
 ### RELEASE 1.0.15
 
 CHANGES:
