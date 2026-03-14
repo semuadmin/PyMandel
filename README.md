@@ -83,7 +83,7 @@ the Python 3 scripts (bin) and site_packages directories are included in your PA
 
 ### Dependencies
 
-PyMandel is compatible with Python 3.9 - 3.13.
+PyMandel is compatible with Python >= 3.10.
 
 On Windows and MacOS, pip, tkinter and the necessary imaging libraries are generally packaged with Python.  On some Linux distributions like Ubuntu 18+ and Raspberry Pi OS, they may need to be installed separately, e.g.:
 
@@ -134,12 +134,6 @@ python3 -m pymandel
 
 **NB:** if the Python 3 scripts (bin) or site_packages directories are *not* in your PATH, you will need
 to add the fully-qualified path to `pymandel` in the commands above.
-
-**Tip**: to find the site_packages location, type `pip3 show pymandel` and look for the `Location:` entry in the response, e.g.
-
-- Linux: `Location: /home/username/.local/lib/python3.12/site-packages`
-- MacOS: `Location: /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages`
-- Windows: `Location: c:\users\username\appdata\roaming\python\python312\lib\site-packages`
 
 **Tip:** To create an application launcher for linux distributions like Ubuntu, create a text file named `pymandel.desktop` with the following content (*edited for your particular environment*) and copy this to the `/home/user/.local/share/applications` folder, e.g.
 

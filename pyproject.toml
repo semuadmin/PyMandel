@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=75.0", "wheel"]
+requires = ["setuptools>=75.0.0", "wheel"]
 build-backend = "setuptools.build_meta:__legacy__"
 
 [project]
@@ -20,7 +20,7 @@ keywords = [
     "numba",
 ]
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 classifiers = [
     "Operating System :: OS Independent",
     "Development Status :: 5 - Production/Stable",
@@ -28,17 +28,18 @@ classifiers = [
     "Environment :: Win32 (MS Windows)",
     "Environment :: X11 Applications",
     "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
     "Intended Audience :: End Users/Desktop",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Topic :: Multimedia :: Graphics",
     "Topic :: Scientific/Engineering :: Mathematics",
     "Topic :: Education",
-    "Topic :: Utilities",
 ]
 
 dependencies = ["numba>=0.60.0", "numpy>=2.0.0", "Pillow>=9.3.0"]
@@ -54,8 +55,10 @@ documentation = "https://www.semuadmin.com/pymandel/"
 repository = "https://github.com/semuadmin/pymandel"
 changelog = "https://github.com/semuadmin/pymandel/blob/master/RELEASE_NOTES.md"
 
-[project.optional-dependencies]
-deploy = [
+[dependency-groups]
+optional = []
+build = [
+    "awscli",
     "build",
     "packaging>=24.2",
     "pip",
@@ -74,30 +77,38 @@ test = [
     "Sphinx",
     "sphinx-rtd-theme",
 ]
+deploy = [{ include-group = "build" }, { include-group = "test" }]
 
 [tool.setuptools.dynamic]
 version = { attr = "pymandel._version.__version__" }
 
 [tool.black]
-line-length = 88
-target-version = ['py39']
+target-version = ['py310']
 
 [tool.isort]
-py_version = 39
+py_version = 310
 profile = "black"
 
 [tool.bandit]
-exclude_dirs = ["docs", "examples", "references", "tests"]
-skips = []
+exclude_dirs = ["docs", "examples", "tests"]
+skips = [
+    "B104",
+    "B311",
+    "B318",
+    "B404",
+    "B408",
+    "B603",
+] # bind 0.0.0.0; randrange; minidom; subroutine
 
 [tool.pylint]
 jobs = 0
 reports = "y"
 recursive = "y"
-py-version = "3.9"
-fail-under = "9.6"
+py-version = "3.10"
+fail-under = "9.9"
 fail-on = "E,F"
 clear-cache-post-run = "y"
+good-names = "i,j,x,y"
 disable = """
     raw-checker-failed,
     bad-inline-option,
@@ -108,20 +119,20 @@ disable = """
     deprecated-pragma,
     use-symbolic-message-instead,
     too-many-instance-attributes,
-    too-many-branches,
-    too-many-statements,
     unused-private-member,
     too-few-public-methods,
     too-many-public-methods,
     too-many-locals,
     invalid-name,
-    missing-module-docstring
+    unused-argument,
+    logging-fstring-interpolation,
+    missing-module-docstring,
+    too-many-positional-arguments,
+    too-many-arguments,
 """
 
 [tool.pytest.ini_options]
 minversion = "7.0"
 addopts = "--cov --cov-report term-missing"
 pythonpath = ["src"]
-
-[tool.coverage.run]
-source = ["src"]
+testpaths = ["tests"]
