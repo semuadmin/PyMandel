@@ -6,7 +6,7 @@ This handles the status bar notifications.
 Created on 7 Apr 2020
 
 :author: semuadmin
-:copyright: SEMU Consulting © 2020
+:copyright: semuadmin (Steve Smith) © 2020
 :license: GPL3
 
 This file is part of PyMandel.

@@ -258,16 +258,11 @@ Pass `-h` or `-help` for a list of available parameters.
 
 GPLv3 License
 
-Copyright (c) 2020, SEMU Consulting
+Copyright (c) 2020, semuadmin (Steve Smith)
 All rights reserved.
 semuadmin@semuadmin.com
 
 The HoloViz [Colorcet color maps](https://github.com/holoviz/colorcet) library has been harvested for some of the color rendering themes. These color maps are released under a Creative Commons Attribution 4.0 International Public License (CC-BY) - see [Colorcet License Conditions](https://github.com/holoviz/colorcet/blob/main/LICENSE.txt) for details. ***NB:*** for convenience the selected Colorcet assets (256-depth cyclic color maps) were converted into numpy rgb arrays in colormaps.py and the library itself is not actually used at runtime.
-
-`PyMandel` is maintained entirely by volunteers. If you find it useful, a small donation would be greatly appreciated!
-
-[![Donations](https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate/?business=UL24WUA4XHNRY&no_recurring=1&item_name=Any+donations%2C+however+small%2C+will+help+further+the+development+of+these+projects.+Many+thanks%21&currency_code=GBP)
-
 
 You may also like this - an online [JavaScript version of a Fractal Generator](https://github.com/semuadmin/fractal-generator) with similar functionality:
 

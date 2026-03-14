@@ -6,7 +6,7 @@ This handles all the user interaction (mouse and key clicks) and image mechanics
 Created on 3 Apr 2020
 
 :author: semuadmin
-:copyright: SEMU Consulting © 2020
+:copyright: semuadmin (Steve Smith) © 2020
 :license: GPL3
 
 This file is part of PyMandel.

@@ -11,7 +11,7 @@ For more information refer to http://numba.pydata.org.
 Created on 29 Mar 2020
 
 :author: semuadmin
-:copyright: SEMU Consulting © 2020
+:copyright: semuadmin (Steve Smith) © 2020
 :license: GPL3
 
 This file is part of PyMandel.
