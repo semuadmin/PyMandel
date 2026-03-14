@@ -112,11 +112,9 @@ python3 -m pip install --upgrade pymandel
 If required, `PyMandel` can also be installed into a virtual environment, e.g.
 
 ```shell
-python3 -m pip install --user --upgrade virtualenv
-python3 -m virtualenv env
-source env/bin/activate (or env\Scripts\activate on Windows)
-(env) python3 -m pip install --upgrade pymandel
-...
+python3 -m venv pymandel
+source pymandel/bin/activate # or pymandel\Scripts\activate on Windows
+python3 -m pip install --upgrade pymandel
 deactivate
 ```
 
@@ -126,11 +124,6 @@ pymandel
 ```
 
 If desired, you can add a shortcut to this command to your desktop or favourites menu.
-
-Alternatively, if the Python 3 site_packages directory is in your PATH, you can type (all lowercase):
-```shell
-python3 -m pymandel
-```
 
 **NB:** if the Python 3 scripts (bin) or site_packages directories are *not* in your PATH, you will need
 to add the fully-qualified path to `pymandel` in the commands above.
