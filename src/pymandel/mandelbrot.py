@@ -12,7 +12,7 @@ Created on 29 Mar 2020
 
 :author: semuadmin
 :copyright: semuadmin (Steve Smith) © 2020
-:license: GPL3
+:license: GPL-3.0-only
 
 This file is part of PyMandel.
 
@@ -102,6 +102,7 @@ def plot(
     Plots selected fractal type in the numpy rgb array 'imagemap'
     """
 
+    radius2 = radius**2
     # For each pixel in array
     for x_axis in prange(width):  # pylint: disable=not-an-iterable
         for y_axis in prange(height):  # pylint: disable=not-an-iterable
@@ -117,7 +118,7 @@ def plot(
                 zyoff,
                 zoom,
                 maxiter,
-                radius,
+                radius2,
                 exponent,
                 cxoff,
                 cyoff,
@@ -139,7 +140,7 @@ def fractal(
     zyoff,
     zoom,
     maxiter,
-    radius,
+    radius2,
     exponent,
     cxoff,
     cyoff,
@@ -180,7 +181,7 @@ def fractal(
                 lastz = z
         # ... end of optimisation
 
-        if abs(z) > radius**2:
+        if abs(z) > radius2:
             break
 
     return i, abs(z)  # i, za

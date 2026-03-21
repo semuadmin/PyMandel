@@ -7,7 +7,7 @@ Created on 7 Apr 2020
 
 :author: semuadmin
 :copyright: semuadmin (Steve Smith) © 2020
-:license: GPL3
+:license: GPL-3.0-only
 
 This file is part of PyMandel.
 
