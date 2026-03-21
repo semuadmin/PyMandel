@@ -9,7 +9,7 @@ authors = [{ name = "Steve Smith", email = "semuadmin@semuconsulting.com" }]
 maintainers = [{ name = "Steve Smith", email = "semuadmin@semuconsulting.com" }]
 description = "Fractal generation GUI application"
 license = "GPL-3.0-only"
-license-files = ["LICENSE"]
+license-files = ["COPYING"]
 keywords = [
     "PyMandel",
     "fractal",
