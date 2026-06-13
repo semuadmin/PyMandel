@@ -30,7 +30,7 @@ Classifier: Topic :: Scientific/Engineering :: Mathematics
 Classifier: Topic :: Education
 Requires-Python: >=3.10
 Description-Content-Type: text/markdown
-License-File: LICENSE
+License-File: COPYING
 Requires-Dist: numba>=0.60.0
 Requires-Dist: numpy>=2.0.0
 Requires-Dist: Pillow>=9.3.0
