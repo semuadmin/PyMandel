@@ -15,7 +15,7 @@ pymandel-*/
 /__pycache__
 /src/pymandel/__pycache__
 /src/colormaps/__pycache__
-/src/pymandel.egg-info/
+/src/pymandel.egg-info
 *.pyc
 *.nbi
 *.nbc

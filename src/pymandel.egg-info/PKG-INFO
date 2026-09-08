@@ -2,8 +2,10 @@ Metadata-Version: 2.4
 Name: pymandel
 Version: 1.0.17
 Summary: Fractal generation GUI application
-Author-email: Steve Smith <semuadmin@semuconsulting.com>
-Maintainer-email: Steve Smith <semuadmin@semuconsulting.com>
+Author: Steve Smith
+Author-email: semuadmin@semuconsulting.com
+Maintainer: Steve Smith
+Maintainer-email: semuadmin@semuconsulting.com
 License-Expression: GPL-3.0-only
 Project-URL: homepage, https://github.com/semuadmin/pymandel
 Project-URL: documentation, https://www.semuadmin.com/pymandel/
@@ -25,6 +27,7 @@ Classifier: Programming Language :: Python :: 3.11
 Classifier: Programming Language :: Python :: 3.12
 Classifier: Programming Language :: Python :: 3.13
 Classifier: Programming Language :: Python :: 3.14
+Classifier: Programming Language :: Python :: 3.15
 Classifier: Topic :: Multimedia :: Graphics
 Classifier: Topic :: Scientific/Engineering :: Mathematics
 Classifier: Topic :: Education
