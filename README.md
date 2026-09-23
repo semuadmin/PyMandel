@@ -6,7 +6,7 @@
 [Command Line Utility](#cli) |
 [Author & License](#author)
 
-PyMandel is a free, open-source graphical Mandelbrot and Julia Set rendering application written entirely in Python 3 and tkinter 8.6, with metadata import/export, basic animation functionality and performance enhancement via [Numba](http://numba.pydata.org/) JIT compilation, parallelisation and caching.
+PyMandel is a free, open-source graphical Mandelbrot and Julia Set rendering application written entirely **by human beings** in Python and tkinter, with metadata import/export, basic animation functionality and performance enhancement via [Numba](http://numba.pydata.org/) JIT compilation, parallelisation and caching.
 
 ![MacOS screenshot](https://github.com/semuadmin/PyMandel/blob/main/images/burning_julia.png?raw=true)
 
@@ -33,6 +33,8 @@ It also includes both GUI and command line facilities to automatically create se
 ![Open Issues](https://img.shields.io/github/issues-raw/semuadmin/PyMandel)
 
 PyMandel is intended as free, open-source educational fun. We're not looking to compete with the likes of Ultra Fractal © here, but contributions are very welcome - please refer to [CONTRIBUTING.MD](https://github.com/semuadmin/PyMandel/blob/main/CONTRIBUTING.md).
+
+![No Copilot](https://github.com/semuconsulting/PyGPSClient/blob/main/images/nocopilot100.png?raw=true)
 
 ### Animated Mandelbrot Zoom sequence
 
@@ -83,7 +85,7 @@ the Python 3 scripts (bin) and site_packages directories are included in your PA
 
 ### Dependencies
 
-PyMandel is compatible with Python >= 3.10.
+PyMandel is compatible with Python >=3.10 <3.15 (*numba not yet available on Python 3.15*).
 
 On Windows and MacOS, pip, tkinter and the necessary imaging libraries are generally packaged with Python.  On some Linux distributions like Ubuntu 18+ and Raspberry Pi OS, they may need to be installed separately, e.g.:
 

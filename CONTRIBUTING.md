@@ -6,7 +6,7 @@ We appreciate any contribution, from fixing a grammar mistake in a comment to im
 
 Being one of our contributors, you agree and confirm that:
 
-* The work is all your own.
+* The work is all your own. For the avoidance of doubt, this means **no AI coding agents such as Copilot**.
 * Your work will be distributed under a BSD 3-Clause License once your pull request is merged.
 * You submitted work fulfils or mostly fulfils our styles and standards.
 
@@ -32,9 +32,9 @@ Please write pytest examples for new code you create and add them to the /tests 
 
 We test on the following platforms:
 * Windows 11
-* MacOS (Sequoia)
-* Linux (Ubuntu 24.04 Noble Numbat)
-* Raspberry Pi OS (64-bit & 32-bit)
+* MacOS 26/27
+* Linux 24/26
+* Raspberry Pi OS Trixie
 
 ## Submitting changes
 
